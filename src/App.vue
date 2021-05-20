@@ -18,8 +18,17 @@ export default {
 
 <style lang="scss" scoped>
   /* @import url('./assets/styles/global.scss'); */
-  @import"./assets/styles/global.scss";
   #app {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+</style>
+
+<style>
+  html, body {
+    padding: 0;
+    margin: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
