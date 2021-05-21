@@ -42,13 +42,14 @@ export default {
   mixins: [ebookMixin],
   computed: {
     getSectionName () {
-      if (this.section) {
-        const sectionInfo = this.currentBook.section(this.section)
-        if (sectionInfo && sectionInfo.href) {
-          return this.currentBook.navigation.get(sectionInfo.href).label
-        }
-      }
-      return ''
+      // if (this.section) {
+      //   const sectionInfo = this.currentBook.section(this.section)
+      //   if (sectionInfo && sectionInfo.href && this.currentBook && this.currentBook.navigation) {
+      //     return this.currentBook.navigation.get(sectionInfo.href).label
+      //   }
+      // }
+      return this.section ? this.navigation[this.section].label : ''
+      // return ''
     }
   },
   methods: {
@@ -74,7 +75,6 @@ export default {
       this.$refs.progress.style.backgroundSize = `${progress}% 100%`
     },
     preSection () {
-      console.log('aaaa')
       if (this.section > 0 && this.bookAvailable) {
         this.setSection(this.section - 1).then(() => {
           this.displaySection()
@@ -82,7 +82,6 @@ export default {
       }
     },
     nextSection () {
-      console.log(this.currentBook.spine)
       if (this.section < this.currentBook.spine.length - 1 && this.bookAvailable) {
         this.setSection(this.section + 1).then(() => {
           this.displaySection()

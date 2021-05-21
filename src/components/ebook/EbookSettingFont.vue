@@ -45,10 +45,8 @@ export default {
       this.currentBook.rendition.themes.fontSize(fontSize)
     },
     showFontFamilySetting () {
-      console.log('111')
     },
     showFontFamilyPopup () {
-      console.log('popup')
       this.setFontFamilyVisible(true)
     }
   },

@@ -165,7 +165,7 @@ export const ebookMixin = {
     },
     refreshLocation () {
       const currentLocation = this.currentBook.rendition.currentLocation()
-      if (currentLocation.start && currentLocation.start.index) {
+      if (currentLocation && currentLocation.start && currentLocation.start.index) {
         this.setSection(currentLocation.start.index)
         const progress = this.currentBook.locations.percentageFromCfi(currentLocation.start.cfi)
         this.setProgress(Math.floor(progress * 100))

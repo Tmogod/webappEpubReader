@@ -20,6 +20,7 @@
   <ebook-setting-font-popup></ebook-setting-font-popup>
   <ebook-setting-theme></ebook-setting-theme>
   <ebook-setting-progress></ebook-setting-progress>
+  <ebook-slide></ebook-slide>
 </div>
 
 </template>
@@ -30,6 +31,7 @@ import { ebookMixin } from '../../utils/mixin'
 import EbookSettingFontPopup from './EbookSettingFontPopup'
 import EbookSettingTheme from './EbookSettingTheme.vue'
 import EbookSettingProgress from './EbookSettingProgress.vue'
+import EbookSlide from './EbookSlide.vue'
 
 export default {
   mixins: [ebookMixin],
@@ -39,7 +41,6 @@ export default {
     },
     showSettingA (key) {
       if (this.settingVisible === 0) {
-        console.log('进来了吗')
         this.setSettingVisible(-1)
       } else {
         this.setSettingVisible(key)
@@ -71,7 +72,8 @@ export default {
     EbookSettingFont,
     EbookSettingFontPopup,
     EbookSettingTheme,
-    EbookSettingProgress
+    EbookSettingProgress,
+    EbookSlide
   }
 }
 </script>

@@ -20,7 +20,6 @@ export default {
     setTheme (index) {
       const theme = this.themeList[index]
       this.removeAllCss()
-      console.log(this.removeAllCss)
       this.setDefaultTheme(theme.name).then(() => {
         this.currentBook.rendition.themes.select(this.defaultTheme)
         this.initGlobalStyle()

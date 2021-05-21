@@ -316,7 +316,6 @@ export function removeBookCache (fileName) {
     removeLocalStorage(fileName)
     removeLocalStorage(`${fileName}-info`)
     removeLocalForage(fileName, () => {
-      console.log(`[${fileName}]删除成功...`)
       resolve()
     }, reject)
   })
@@ -336,4 +335,8 @@ export function reset (vue) {
   vue.$store.dispatch('setSettingVisible', 0)
   vue.$store.dispatch('setFontFamilyVisible', false)
   vue.$store.dispatch('setSpeakingIconBottom', realPx(58))
+}
+
+export function flatten (array) {
+  return [].concat(...array.map(item => [].concat(item, ...flatten(item.subitems))))
 }
